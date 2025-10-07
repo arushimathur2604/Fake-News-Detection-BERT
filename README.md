@@ -15,77 +15,82 @@ BERT understands the **context and meaning** of words in both directions, making
 
 ---
 
-### ⚙️ Step 2: Create a Python Virtual Environment
+## ⚙️ Step 2: Create a Python Virtual Environment
+
 ```bash
 python -m venv bert_env
-Activate it:
 
-Windows (PowerShell):
 
-bash
-Copy code
 bert_env\Scripts\activate
-macOS / Linux:
 
-bash
-Copy code
-source bert_env/bin/activate
-📦 Step 3: Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-If not available:
-
-bash
-Copy code
-pip install torch torchvision torchaudio transformers pandas numpy scikit-learn flask tqdm
-🧠 Step 4: Check the Project Structure
-css
-Copy code
-├── app.py / main.py      ← entry file
-├── model/                ← BERT model / weights
-├── data/                 ← dataset
-├── requirements.txt
-├── utils.py
-▶️ Step 5: Run the Application
-Flask Web App:
-
-bash
-Copy code
-python app.py
-Visit → http://127.0.0.1:5000
-
-Jupyter Notebook:
-
-bash
-Copy code
-pip install notebook
-jupyter notebook
-Open the .ipynb file and run each cell.
-
-Training or Testing Script:
-
-bash
-Copy code
-python train.py
-python predict.py
-💡 Step 6: (Optional) Use GPU
-python
-Copy code
-import torch
-print(torch.cuda.is_available())
-If it prints True, BERT will run faster using GPU.
-
-🧾 Step 7: Deactivate Environment
-bash
-Copy code
-deactivate
-❤️ Acknowledgment
-Built using BERT, one of the most powerful NLP models, to fight misinformation through the power of AI.
-
-yaml
-Copy code
+You should see (bert_env) appear at the start of the terminal prompt.
 
 ---
 
-Would you like me to make this version slightly **more styled with emojis and color-coded headings** (for better GitHub visual appeal)?
+```markdown
+## 📦 Step 3: Install Dependencies
+
+If a `requirements.txt` file is available, run:
+```bash
+pip install -r requirements.txt
+
+If not available:
+pip install torch torchvision torchaudio transformers pandas numpy scikit-learn flask tqdm
+
+
+---
+
+```markdown
+## 🧠 Step 4: Check the Project Structure
+
+├── app.py / main.py ← entry file
+├── model/ ← BERT model / weights
+├── data/ ← dataset
+├── requirements.txt
+├── utils.py
+
+## ▶️ Step 5: Run the Application
+
+**Flask Web App:**
+```bash
+python app.py
+
+Visit → http://127.0.0.1:5000
+
+Jupyter Notebook:
+pip install notebook
+jupyter notebook
+
+Open the .ipynb file and run each cell.
+
+Training or Testing Script:
+python train.py
+python predict.py
+
+
+---
+
+```markdown
+## 💡 Step 6: (Optional) Use GPU
+
+```python
+import torch
+print(torch.cuda.is_available())
+
+If it prints True, BERT will run faster using GPU.
+
+---
+
+```markdown
+## 🧾 Step 7: Deactivate Environment
+
+```bash
+deactivate
+
+
+---
+
+```markdown
+## ❤️ Acknowledgment
+
+Built using **BERT**, one of the most powerful NLP models, to fight misinformation through the power of AI.
