@@ -1,39 +1,91 @@
-# Fake-News-Detection-Using-BERT
+# 🧠 Fake News Detection Using BERT
 
-## Overview
+## 📌 Overview
+This project uses **BERT (Bidirectional Encoder Representations from Transformers)** — a state-of-the-art deep learning model developed by Google — to detect whether a given news headline or article is **real or fake**.  
+BERT understands the **context and meaning** of words in both directions, making it ideal for text classification tasks like fake news detection.
 
-This project tries to classify tweets as real or fake depending on the tweet text and also the text present in the article that is tagged in the tweet. This particular implementation uses BERT for classification.
+---
 
-Porject Website: https://prathameshmahankal.github.io/tracking-online-disinformation/
+## 🚀 How to Run the Project
 
-## Build Steps
+### 🧭 Step 1: Open the Folder in VS Code
+1. Extract the ZIP file.  
+2. Open **VS Code → File → Open Folder… →** select the extracted `Fake-News-Detection-Using-BERT-main` folder.  
+3. Open a new terminal (`Ctrl + \``).
 
-Follow these steps to build this project in your local system:
-1. Install all the dependencies using the **requirements.txt** file
-2. The **data_preparation** notebook is used to create the final training dataset. You can directly extact the **data zip file** and find the **training dataset** there. You can also upload this folder to Azure using the **upload_data** script
-3. Next, you could add any more data to the existing dataset and can use this combined data to train your BERT model in your local using the **train notebook**. This noteboook is a direct adaptation of this notebook built by Prateek Joshi (https://github.com/prateekjoshi565/Fine-Tuning-BERT).
-4. Conversely, you can also train the model on Azure using the **run-training-script** file which internally runs the **train** script in the src folder.
-5. Once the model is ready you can register the model in Azure and can then build you **echo_score** script where you write the code to initialize your model and generate predictions.
-6. This script will be used while deploying your model using the **deploy** script. Note that the existing code currently deploys code on **Azure Container Instances**, but you can also deploy it on Azure Kubernetes Services with minimal code change.
-7. Once all these steps are done, you have an ACI endpoint ready which you can then use to generate predictions directly for your test data.
-8. Next, you need to build your **inference pipeline**. In this case, the **predict** script is the one that takes in data from blob storage and generates predictions for that file. In case you have a dataset that you wish to generate predictions for, you could use the **inference** script instead.
-9. I also have a **receiver** script which waits for a message from the data extraction pipeline (handled by a different team member) and runs the predict script whenever data for any request is ready in the blob storage. This script might not be useful for someone not related to the project.
+---
 
-## Datasets Used
-* LIAR
-* ISOT Fake News
-* Buzzfeed Political News Data
-* Russian Troll tweets
-* Fake news dataset by UTK Machine Learning Club
-* Kaggle Fake News Detection
-* NBC Election Troll Tweets 2016
-* Fake News on Twitter 2016 viral tweets
+### ⚙️ Step 2: Create a Python Virtual Environment
+```bash
+python -m venv bert_env
+Activate it:
 
-## Demo Video
+Windows (PowerShell):
 
-link
+bash
+Copy code
+bert_env\Scripts\activate
+macOS / Linux:
 
-## Steps to run a demo
+bash
+Copy code
+source bert_env/bin/activate
+📦 Step 3: Install Dependencies
+bash
+Copy code
+pip install -r requirements.txt
+If not available:
 
-1. 
+bash
+Copy code
+pip install torch torchvision torchaudio transformers pandas numpy scikit-learn flask tqdm
+🧠 Step 4: Check the Project Structure
+css
+Copy code
+├── app.py / main.py      ← entry file
+├── model/                ← BERT model / weights
+├── data/                 ← dataset
+├── requirements.txt
+├── utils.py
+▶️ Step 5: Run the Application
+Flask Web App:
 
+bash
+Copy code
+python app.py
+Visit → http://127.0.0.1:5000
+
+Jupyter Notebook:
+
+bash
+Copy code
+pip install notebook
+jupyter notebook
+Open the .ipynb file and run each cell.
+
+Training or Testing Script:
+
+bash
+Copy code
+python train.py
+python predict.py
+💡 Step 6: (Optional) Use GPU
+python
+Copy code
+import torch
+print(torch.cuda.is_available())
+If it prints True, BERT will run faster using GPU.
+
+🧾 Step 7: Deactivate Environment
+bash
+Copy code
+deactivate
+❤️ Acknowledgment
+Built using BERT, one of the most powerful NLP models, to fight misinformation through the power of AI.
+
+yaml
+Copy code
+
+---
+
+Would you like me to make this version slightly **more styled with emojis and color-coded headings** (for better GitHub visual appeal)?
